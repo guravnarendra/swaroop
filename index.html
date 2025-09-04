@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swaroop Parlour LLP - Premium Beauty Services in Navi Mumbai</title>
+    <meta name="description" content="Located in Navi Mumbai, Swaroop Parlour LLP offers premium beauty services including hair treatments, facials, bridal makeup, and more. Professional beauticians in a hygienic environment.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --deep-brown: #8B4513;
+            --cream: #F5F5DC;
+            --rose-gold: #E8B4B8;
+            --dark-charcoal: #333333;
+            --medium-gray: #666666;
+        }
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #B8860B 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/LvLDBwv3UjLi.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-gold {
+            animation: pulse-gold 2s infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+        }
+        
+        .navbar-glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+    </style>
+</head>
+<body class="font-inter text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 navbar-glass border-b border-gray-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                   <a href="/"><h1 class="text-2xl font-playfair font-bold text-gradient">Swaroop Parlour</h1></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-900 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">About Us</a>
+                        <a href="services.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Services</a>
+                        <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Gallery</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Contact</a>
+                        <a href="book.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Book</a>
+
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-yellow-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-900 block px-3 py-2 text-base font-medium">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">About Us</a>
+                <a href="services.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Services</a>
+                <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-6 floating-animation" data-aos="fade-up">
+                Swaroop Parlour LLP
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light" data-aos="fade-up" data-aos-delay="200">
+                Premium Beauty Services in the Heart of Navi Mumbai
+            </p>
+            <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="services.html" class="inline-block bg-gradient-gold text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 pulse-gold">
+                    Explore Services
+                </a>
+                <a href="book.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-6">
+                        About <span class="text-gradient">Swaroop Parlour</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Located in the heart of Navi Mumbai, Swaroop Parlour LLP offers a range of premium beauty services including hair treatments, facials, bridal make-up, and more. Our team of professional beauticians ensures that every client receives personalized care in a friendly and hygienic environment.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-600 mb-2">5+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-600 mb-2">1000+</div>
+                            <div class="text-sm text-gray-600">Happy Clients</div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="inline-flex items-center text-yellow-600 font-semibold hover:text-yellow-700 transition-colors duration-300">
+                        Learn More About Us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="assets/images/TE6sli1DLgg7.webp" alt="Salon Interior" class="rounded-lg shadow-2xl w-full h-96 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">
+                    Our <span class="text-gradient">Services</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    We offer a comprehensive range of beauty services to help you look and feel your best
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hair Services -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <i class="fas fa-cut text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold mb-3">Hair Services</h3>
+                        <p class="text-gray-600 mb-4">Haircuts, styling, coloring, and keratin treatments by expert stylists</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Professional Haircuts</li>
+                            <li>• Hair Coloring</li>
+                            <li>• Keratin Treatments</li>
+                            <li>• Hair Styling</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Skin Treatments -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+                        <i class="fas fa-spa text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold mb-3">Skin Treatments</h3>
+                        <p class="text-gray-600 mb-4">Professional facials and skin care treatments for glowing skin</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Deep Cleansing Facials</li>
+                            <li>• Anti-Aging Treatments</li>
+                            <li>• Skin Brightening</li>
+                            <li>• Acne Treatment</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Nail Services -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-hand-sparkles text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold mb-3">Nail Services</h3>
+                        <p class="text-gray-600 mb-4">Complete manicure and pedicure services with premium products</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Classic Manicure</li>
+                            <li>• Gel Manicure</li>
+                            <li>• Pedicure Services</li>
+                            <li>• Nail Art</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bridal Makeup -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center">
+                        <i class="fas fa-heart text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold mb-3">Bridal Makeup</h3>
+                        <p class="text-gray-600 mb-4">Special occasion makeup and bridal styling for your perfect day</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Bridal Makeup</li>
+                            <li>• Event Styling</li>
+                            <li>• Hair & Makeup Combo</li>
+                            <li>• Trial Sessions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Tattoo Services -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                        <i class="fas fa-paint-brush text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold mb-3">Tattoo Services</h3>
+                        <p class="text-gray-600 mb-4">Professional tattoo services with hygienic practices and quality ink</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Custom Designs</li>
+                            <li>• Traditional Tattoos</li>
+                            <li>• Cover-up Work</li>
+                            <li>• Consultation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- More Services -->
+                <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
+                        <i class="fas fa-plus text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-playfair font-semibold mb-3">& More</h3>
+                        <p class="text-gray-600 mb-4">Additional beauty services tailored to your needs</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li>• Eyebrow Threading</li>
+                            <li>• Waxing Services</li>
+                            <li>• Hair Spa</li>
+                            <li>• Consultation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="services.html" class="inline-block bg-gradient-gold text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">
+                    What Our <span class="text-gradient">Clients Say</span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Don't just take our word for it - hear from our satisfied clients
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "The best salon experience I've ever had! I loved the service, and my hair looks amazing!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            P
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Priya K.</div>
+                            <div class="text-sm text-gray-500">Regular Client</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-xl">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Professional, hygienic, and friendly staff. Definitely my go-to salon!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                            R
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Rina P.</div>
+                            <div class="text-sm text-gray-500">Loyal Customer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">
+                    Visit <span class="text-gradient">Our Salon</span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Located in the heart of Navi Mumbai - Easy to find, easy to love
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                                <p class="text-gray-600">
+                                    Sai Bal Rog Clinic, Plot no 8, Sector 19,<br>
+                                    Road Number 2, New Panvel East,<br>
+                                    Navi Mumbai, Raigad, Maharashtra, 410206
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                                <p class="text-gray-600">+91 XXXXX XXXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-white flex-shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Hours</h3>
+                                <p class="text-gray-600">
+                                    Mon - Sat: 10:00 AM - 8:00 PM<br>
+                                    Sunday: 11:00 AM - 6:00 PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="contact.html" class="inline-block bg-gradient-gold text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                            Book Appointment
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-map text-4xl mb-4"></i>
+                            <p>Interactive Map Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-playfair font-bold mb-4 text-gradient">Swaroop Parlour LLP</h3>
+                    <p class="text-gray-300 mb-4">
+                        Premium beauty services in the heart of Navi Mumbai. Our team of professional beauticians ensures personalized care in a friendly and hygienic environment.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Hair Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Skin Treatments</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Nail Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Bridal Makeup</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Tattoo Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2024 Swaroop Parlour LLP. All rights reserved. | Designed with ❤️ for beauty excellence
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

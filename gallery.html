@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Swaroop Parlour LLP | Our Work Showcase</title>
+    <meta name="description" content="Explore our gallery showcasing beautiful transformations, hair styling, makeup artistry, and salon work at Swaroop Parlour LLP in Navi Mumbai.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --deep-brown: #8B4513;
+            --cream: #F5F5DC;
+            --rose-gold: #E8B4B8;
+            --dark-charcoal: #333333;
+            --medium-gray: #666666;
+        }
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #B8860B 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/3qTxS7TgkGb9.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .navbar-glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            background: var(--primary-gold);
+            color: white;
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body class="font-inter text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 navbar-glass border-b border-gray-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/"><h1 class="text-2xl font-playfair font-bold text-gradient">Swaroop Parlour</h1></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">About Us</a>
+                        <a href="services.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Services</a>
+                        <a href="gallery.html" class="text-gray-900 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Gallery</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Contact</a>
+                        <a href="book.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Book</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-yellow-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">About Us</a>
+                <a href="services.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Services</a>
+                <a href="gallery.html" class="text-gray-900 block px-3 py-2 text-base font-medium">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-4" data-aos="fade-up">
+                Our <span class="text-yellow-400">Gallery</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light" data-aos="fade-up" data-aos-delay="200">
+                Showcasing Our Beautiful Transformations
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8" data-aos="fade-up">
+                <h2 class="text-3xl font-playfair font-bold text-gray-900 mb-6">
+                    Browse Our <span class="text-gradient">Work</span>
+                </h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="filter-btn active px-6 py-2 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium" data-filter="all">
+                        All Work
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium" data-filter="hair">
+                        Hair Services
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium" data-filter="makeup">
+                        Makeup & Beauty
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium" data-filter="nails">
+                        Nail Art
+                    </button>
+                    <button class="filter-btn px-6 py-2 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium" data-filter="salon">
+                        Salon Interior
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="gallery-grid">
+                
+                <!-- Hair Services Gallery -->
+                <div class="gallery-item hair" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/b5IkvxRSXCCq.jpg" alt="Hair Styling" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Professional Haircut</h3>
+                            <p class="text-sm text-gray-600">Modern styling & precision cuts</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item hair" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/AgrK26TJiE0y.jpg" alt="Curly Hair" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Curly Hair Styling</h3>
+                            <p class="text-sm text-gray-600">Natural curl enhancement</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item hair" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/1ukGNqxnm7sw.jpg" alt="Keratin Treatment" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Keratin Treatment</h3>
+                            <p class="text-sm text-gray-600">Smooth & frizz-free results</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item hair" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/5gMhxnUgbOmF.jpg" alt="Hair Coloring" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Hair Coloring</h3>
+                            <p class="text-sm text-gray-600">Professional color transformation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Makeup & Beauty Gallery -->
+                <div class="gallery-item makeup" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/aqStUH3ezx83.jpeg" alt="Bridal Makeup" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Bridal Makeup</h3>
+                            <p class="text-sm text-gray-600">Perfect wedding day look</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item makeup" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/99rlnbfTc0zh.jpg" alt="Event Makeup" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Event Makeup</h3>
+                            <p class="text-sm text-gray-600">Special occasion styling</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item makeup" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/fv51CoKhbDdt.jpeg" alt="Hair & Makeup" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Hair & Makeup Combo</h3>
+                            <p class="text-sm text-gray-600">Complete styling package</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item makeup" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/5xEQiyrTC6KH.jpg" alt="Facial Treatment" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Facial Treatment</h3>
+                            <p class="text-sm text-gray-600">Glowing skin results</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nail Art Gallery -->
+                <div class="gallery-item nails" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/Z6Sy8aPgfgkh.jpeg" alt="Manicure" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Classic Manicure</h3>
+                            <p class="text-sm text-gray-600">Perfect nail care</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item nails" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/YoC5KWjvkric.jpg" alt="Pedicure" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Relaxing Pedicure</h3>
+                            <p class="text-sm text-gray-600">Complete foot care</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item nails" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/dJwGEOMWMZXq.jpg" alt="Nail Art" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Creative Nail Art</h3>
+                            <p class="text-sm text-gray-600">Artistic nail designs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item nails" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/qOIGJ62bTNe2.webp" alt="Gel Nails" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Gel Manicure</h3>
+                            <p class="text-sm text-gray-600">Long-lasting shine</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Salon Interior Gallery -->
+                <div class="gallery-item salon" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/LvLDBwv3UjLi.jpg" alt="Salon Interior" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Modern Salon Interior</h3>
+                            <p class="text-sm text-gray-600">Comfortable & stylish</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item salon" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/TE6sli1DLgg7.webp" alt="Salon Setup" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Professional Setup</h3>
+                            <p class="text-sm text-gray-600">State-of-the-art equipment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item salon" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/yRtCaEzHqVzs.png" alt="Salon Ambiance" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Relaxing Ambiance</h3>
+                            <p class="text-sm text-gray-600">Peaceful environment</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item salon" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/images/MaX7gDHj4B5C.jpg" alt="Salon Facilities" class="w-full h-64 object-cover gallery-image">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-gray-900">Premium Facilities</h3>
+                            <p class="text-sm text-gray-600">Luxury experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">
+                    Client <span class="text-gradient">Transformations</span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    See what our happy clients have to say about their experience
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "Amazing transformation! The hair color came out exactly as I wanted. The staff is so professional and friendly."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                            S
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Sneha M.</div>
+                            <div class="text-sm text-gray-500">Hair Coloring Client</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "Perfect bridal makeup! I felt like a princess on my wedding day. Thank you for making it so special."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                            A
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Anita R.</div>
+                            <div class="text-sm text-gray-500">Bridal Client</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400 text-lg">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 italic">
+                        "Love my new haircut! The stylist understood exactly what I wanted. Will definitely come back."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center text-white font-semibold mr-3">
+                            K
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900">Kavya S.</div>
+                            <div class="text-sm text-gray-500">Hair Styling Client</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-gold">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2 class="text-4xl font-playfair font-bold text-white mb-6">
+                Ready for Your Own Transformation?
+            </h2>
+            <p class="text-lg text-white mb-8 opacity-90">
+                Book your appointment today and let us create your perfect look
+            </p>
+            <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+                <a href="contact.html" class="inline-block bg-white text-yellow-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Book Appointment
+                </a>
+                <a href="services.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-yellow-600 transition-all duration-300">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-playfair font-bold mb-4 text-gradient">Swaroop Parlour LLP</h3>
+                    <p class="text-gray-300 mb-4">
+                        Premium beauty services in the heart of Navi Mumbai. Our team of professional beauticians ensures personalized care in a friendly and hygienic environment.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Hair Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Skin Treatments</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Nail Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Bridal Makeup</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Tattoo Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2024 Swaroop Parlour LLP. All rights reserved. | Designed with ❤️ for beauty excellence
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gallery.js"></script>
+</body>
+</html>
+

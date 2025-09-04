@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Swaroop Parlour LLP | Hair, Skin, Nails & More</title>
+    <meta name="description" content="Explore our comprehensive range of beauty services including hair treatments, facials, manicures, pedicures, bridal makeup, and tattoo services at Swaroop Parlour LLP.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --deep-brown: #8B4513;
+            --cream: #F5F5DC;
+            --rose-gold: #E8B4B8;
+            --dark-charcoal: #333333;
+            --medium-gray: #666666;
+        }
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #B8860B 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-gold), var(--deep-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/5JU2fdolihMU.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .navbar-glass {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .service-detail-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, var(--primary-gold), #B8860B);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .service-category {
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="font-inter text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 navbar-glass border-b border-gray-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/"><h1 class="text-2xl font-playfair font-bold text-gradient">Swaroop Parlour</h1></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Home</a>
+                        <a href="about.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">About Us</a>
+                        <a href="services.html" class="text-gray-900 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Services</a>
+                        <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Gallery</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Contact</a>
+                        <a href="book.html" class="text-gray-700 hover:text-yellow-600 px-3 py-2 text-sm font-medium transition-colors duration-300">Book</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-yellow-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">About Us</a>
+                <a href="services.html" class="text-gray-900 block px-3 py-2 text-base font-medium">Services</a>
+                <a href="gallery.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-yellow-600 block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-4" data-aos="fade-up">
+                Our <span class="text-yellow-400">Services</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light" data-aos="fade-up" data-aos-delay="200">
+                Comprehensive Beauty Solutions for Every Need
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-playfair font-bold text-gray-900 mb-4">
+                    Complete <span class="text-gradient">Beauty Services</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    From hair styling to skin treatments, we offer a full range of professional beauty services to help you look and feel your absolute best.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hair Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="service-category mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-playfair font-bold text-gray-900 mb-4">
+                    <i class="fas fa-cut text-yellow-600 mr-3"></i>
+                    Hair Services
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Professional hair care services by expert stylists using premium products
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/b5IkvxRSXCCq.jpg" alt="Haircut" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Professional Haircuts</h3>
+                    <p class="text-gray-600 mb-4">
+                        Precision cuts tailored to your face shape and lifestyle. From classic styles to trendy cuts.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Consultation & Style Advice</li>
+                        <li>• Precision Cutting Techniques</li>
+                        <li>• Styling & Finishing</li>
+                        <li>• Maintenance Tips</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹500</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/AgrK26TJiE0y.jpg" alt="Hair Coloring" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Hair Coloring</h3>
+                    <p class="text-gray-600 mb-4">
+                        Transform your look with professional hair coloring using premium, ammonia-free products.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Color Consultation</li>
+                        <li>• Highlights & Lowlights</li>
+                        <li>• Full Color Treatment</li>
+                        <li>• Color Protection Care</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹1,500</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-teal-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/3Eajf3bbNw6G.jpg" alt="Keratin Treatment" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Keratin Treatments</h3>
+                    <p class="text-gray-600 mb-4">
+                        Smooth, frizz-free hair with our professional keratin treatments for lasting results.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Hair Analysis</li>
+                        <li>• Deep Cleansing</li>
+                        <li>• Keratin Application</li>
+                        <li>• Heat Sealing Process</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹3,000</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-magic text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Hair Styling</h3>
+                    <p class="text-gray-600 mb-4">
+                        Professional styling for special occasions, events, or everyday glamour.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Blow Dry & Styling</li>
+                        <li>• Curling & Straightening</li>
+                        <li>• Updos & Braiding</li>
+                        <li>• Event Styling</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹800</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-leaf text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Hair Spa Treatment</h3>
+                    <p class="text-gray-600 mb-4">
+                        Nourishing hair spa treatments to restore health, shine, and vitality to your hair.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Deep Conditioning</li>
+                        <li>• Scalp Massage</li>
+                        <li>• Hair Mask Application</li>
+                        <li>• Steam Treatment</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹1,200</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skin Treatments Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="service-category mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-playfair font-bold text-gray-900 mb-4">
+                    <i class="fas fa-spa text-yellow-600 mr-3"></i>
+                    Skin Treatments & Facials
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Professional skin care treatments for healthy, glowing, and youthful skin
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/5xEQiyrTC6KH.jpg" alt="Facial Treatment" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Classic Facial</h3>
+                    <p class="text-gray-600 mb-4">
+                        Deep cleansing facial treatment suitable for all skin types with relaxing massage.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Skin Analysis</li>
+                        <li>• Deep Cleansing</li>
+                        <li>• Exfoliation</li>
+                        <li>• Face Massage & Mask</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹800</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/A25xiL7ALCCn.jpg" alt="Anti-Aging Treatment" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Anti-Aging Facial</h3>
+                    <p class="text-gray-600 mb-4">
+                        Advanced anti-aging treatment to reduce fine lines and restore youthful glow.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Collagen Boost Treatment</li>
+                        <li>• Fine Line Reduction</li>
+                        <li>• Firming Massage</li>
+                        <li>• Anti-Aging Serum</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹1,500</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/2yGJXcFEjDfy.jpg" alt="Brightening Facial" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Brightening Facial</h3>
+                    <p class="text-gray-600 mb-4">
+                        Skin brightening treatment to reduce pigmentation and achieve even skin tone.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Pigmentation Treatment</li>
+                        <li>• Vitamin C Infusion</li>
+                        <li>• Brightening Mask</li>
+                        <li>• Sun Protection Advice</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹1,200</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-violet-500 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-seedling text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Acne Treatment</h3>
+                    <p class="text-gray-600 mb-4">
+                        Specialized treatment for acne-prone skin with deep pore cleansing and healing.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Deep Pore Cleansing</li>
+                        <li>• Acne Extraction</li>
+                        <li>• Antibacterial Treatment</li>
+                        <li>• Healing Mask</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹1,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nail Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="service-category mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-playfair font-bold text-gray-900 mb-4">
+                    <i class="fas fa-hand-sparkles text-yellow-600 mr-3"></i>
+                    Nail Services
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Complete nail care services for beautiful, healthy hands and feet
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/Z6Sy8aPgfgkh.jpeg" alt="Manicure" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Classic Manicure</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete hand care with nail shaping, cuticle care, and polish application.
+                    </p>
+                    <div class="price-tag inline-block">₹600</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-violet-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/YoC5KWjvkric.jpg" alt="Pedicure" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Classic Pedicure</h3>
+                    <p class="text-gray-600 mb-4">
+                        Relaxing foot care treatment with exfoliation, massage, and nail polish.
+                    </p>
+                    <div class="price-tag inline-block">₹800</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-gem text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Gel Manicure</h3>
+                    <p class="text-gray-600 mb-4">
+                        Long-lasting gel polish manicure with UV curing for chip-free nails.
+                    </p>
+                    <div class="price-tag inline-block">₹1,200</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-teal-500 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-paint-brush text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Nail Art</h3>
+                    <p class="text-gray-600 mb-4">
+                        Creative nail art designs and decorations for special occasions.
+                    </p>
+                    <div class="price-tag inline-block">Starting ₹300</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bridal & Event Services -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="service-category mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-playfair font-bold text-gray-900 mb-4">
+                    <i class="fas fa-heart text-yellow-600 mr-3"></i>
+                    Bridal & Event Services
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Special occasion makeup and styling for your most important moments
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-rose-400 to-pink-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/aqStUH3ezx83.jpeg" alt="Bridal Makeup" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Bridal Makeup</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete bridal makeup package with trial session and touch-up kit.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Pre-Bridal Consultation</li>
+                        <li>• Trial Makeup Session</li>
+                        <li>• Wedding Day Makeup</li>
+                        <li>• Touch-up Kit Included</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹8,000</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/99rlnbfTc0zh.jpg" alt="Event Makeup" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Event Makeup</h3>
+                    <p class="text-gray-600 mb-4">
+                        Professional makeup for parties, functions, and special occasions.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Party Makeup</li>
+                        <li>• Function Makeup</li>
+                        <li>• Photo Shoot Makeup</li>
+                        <li>• Corporate Events</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹2,500</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/fv51CoKhbDdt.jpeg" alt="Hair & Makeup Combo" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Hair & Makeup Combo</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete styling package combining professional hair styling and makeup.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Hair Styling</li>
+                        <li>• Makeup Application</li>
+                        <li>• Coordination Service</li>
+                        <li>• Package Discount</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹4,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tattoo Services -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="service-category mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-playfair font-bold text-gray-900 mb-4">
+                    <i class="fas fa-paint-brush text-yellow-600 mr-3"></i>
+                    Tattoo Services
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Professional tattoo services with hygienic practices and quality ink
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/JFM8R7tiMGhQ.jpg" alt="Custom Tattoo" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Custom Tattoo Design</h3>
+                    <p class="text-gray-600 mb-4">
+                        Personalized tattoo designs created according to your vision and preferences.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Design Consultation</li>
+                        <li>• Custom Artwork</li>
+                        <li>• Size & Placement Advice</li>
+                        <li>• Professional Application</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹2,000</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-red-600 to-red-800 rounded-lg mb-6 flex items-center justify-center">
+                        <img src="assets/images/Ims3pvczCcTD.jpg" alt="Traditional Tattoo" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Traditional Tattoos</h3>
+                    <p class="text-gray-600 mb-4">
+                        Classic tattoo styles and traditional designs with authentic techniques.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Traditional Styles</li>
+                        <li>• Cultural Designs</li>
+                        <li>• Religious Symbols</li>
+                        <li>• Classic Patterns</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹1,500</div>
+                </div>
+                
+                <div class="service-detail-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-800 rounded-lg mb-6 flex items-center justify-center">
+                        <i class="fas fa-redo text-6xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-semibold mb-3">Cover-up Work</h3>
+                    <p class="text-gray-600 mb-4">
+                        Professional cover-up services to transform or hide existing tattoos.
+                    </p>
+                    <ul class="text-sm text-gray-500 mb-4 space-y-1">
+                        <li>• Cover-up Consultation</li>
+                        <li>• Design Solutions</li>
+                        <li>• Color Matching</li>
+                        <li>• Transformation Work</li>
+                    </ul>
+                    <div class="price-tag inline-block">Starting ₹3,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="py-20 bg-gradient-gold">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2 class="text-4xl font-playfair font-bold text-white mb-6">
+                Ready to Book Your Service?
+            </h2>
+            <p class="text-lg text-white mb-8 opacity-90">
+                Contact us today to schedule your appointment and experience our premium beauty services
+            </p>
+            <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
+                <a href="contact.html" class="inline-block bg-white text-yellow-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Book Appointment
+                </a>
+                <a href="gallery.html" class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-yellow-600 transition-all duration-300">
+                    View Gallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-playfair font-bold mb-4 text-gradient">Swaroop Parlour LLP</h3>
+                    <p class="text-gray-300 mb-4">
+                        Premium beauty services in the heart of Navi Mumbai. Our team of professional beauticians ensures personalized care in a friendly and hygienic environment.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center hover:bg-yellow-700 transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Hair Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Skin Treatments</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Nail Services</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Bridal Makeup</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-yellow-400 transition-colors duration-300">Tattoo Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    &copy; 2024 Swaroop Parlour LLP. All rights reserved. | Designed with ❤️ for beauty excellence
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
